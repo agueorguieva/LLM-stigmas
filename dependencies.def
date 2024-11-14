@@ -1,0 +1,15 @@
+Bootstrap: localimage
+From: /sw/hyak101/basics/24.07-tf2-py3-ood.sif
+
+
+%post
+        # install software here
+        pip install tensorflow
+        pip install transformers
+        pip install --upgrade huggingface_hub
+        pip3 install torch torchvision
+        pip install accelerate
+
+%runscript
+        python -c 'print("Hello from your custom Python Container Image!")'
+        python -c 'import tensorflow as tf ; print("Container TensorFlow Version =",tf.__version__)'
