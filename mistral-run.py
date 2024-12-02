@@ -18,9 +18,6 @@ model_m = AutoModelForCausalLM.from_pretrained(mistral_model, torch_dtype=torch.
 
 
 def run_mistral(prompt):
-    
-    #im not sure if i need this .eval()
-   # model_m.eval()
 
     chat = [
         { "role": "user", "content": prompt, "temperature" : 0.2},
